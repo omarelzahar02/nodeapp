@@ -4,7 +4,7 @@ pipeline {
         // define environment variables
         NODE_ENV = 'production'
         PORT = 3000
-
+    }
     stages {
         stage('Build') {
             steps {
