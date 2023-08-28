@@ -1,5 +1,8 @@
 pipeline {
    agent any // run on any available agent
+   options {
+     skipDefaultCheckout(true)
+   }
     environment {
         // define environment variables
         NODE_ENV = 'production'
@@ -11,11 +14,24 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'npm test'
-                //sh './jenkins/scripts/test.sh'
-            }
+        stage(" "){
+          parallel {
+            stage("Test") {
+    
+                steps {
+    
+                  sh 'npm run  test:unit'
+    
+                }
+    
+              }
+            stage("Build") {
+    
+                steps {
+    
+                  sh 'npm run build'
+                }
+    
+              }
+          }
         }
-    }
-}
