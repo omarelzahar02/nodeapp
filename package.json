@@ -39,7 +39,7 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test": "npm run test:unit",
-    "prepare": "husky install",
+    "prepare": "chmod +x ./node_modules/husky/lib/bin.js && husky install",
     "postinstall": "npx next telemetry disable"
   },
   "dependencies": {
