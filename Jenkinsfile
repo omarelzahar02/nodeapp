@@ -11,6 +11,7 @@ pipeline {
     stages {	
         stage('Build') {	
             steps {	
+                sh 'npm -v' // sanity check
                 sh 'npm install'
             }	
         }	
