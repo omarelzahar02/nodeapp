@@ -17,10 +17,22 @@ pipeline {
                 sh 'npm install'
             }	
         }	
-        stage('Deploy') {	
-            steps {	
-                sh 'cat /etc/lsb-release'
-            }	
-        }			
+        stage(" "){
+          parallel {
+            stage("Test") {
+  
+              steps {
+                sh 'npm run  test:unit'
+              }
+  
+            }
+          stage("Build") {
+  
+              steps {
+                sh 'npm run build'
+              }
+            }
+        }
+      }	
     }	
 }
