@@ -7,7 +7,6 @@ pipeline {
     stages {	
         stage('Build') {	
             steps {	
-                git url: 'https://github.com/nodejs/nodejs.org.git'
                 sh 'npm install'
             }	
         }	
