@@ -45,7 +45,7 @@ pipeline {
       stage('Building image') {
         steps{
           script {
-            sh 'chmod 666 /var/run/docker.sock'
+            sh 'service docker start'
             dockerImage = docker.build registry + ":$BUILD_NUMBER"
               }
             }
