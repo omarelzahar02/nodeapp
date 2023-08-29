@@ -45,7 +45,7 @@ pipeline {
       stage('Building image') {
         steps{
           script {
-            sh 'service docker start'
+            sh 'systemctl start docker'
             dockerImage = docker.build registry + ":$BUILD_NUMBER"
               }
             }
