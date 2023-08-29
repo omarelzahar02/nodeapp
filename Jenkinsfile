@@ -12,6 +12,8 @@ pipeline {
         IMAGE_REPO_NAME="jenkins-docker"
         IMAGE_TAG=":$BUILD_NUMBER"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+        AWS_DEFAULT_REGION="us-east-1"
+        THE_BUTLER_SAYS_SO=credentials('omarelzahar-aws-creds')
     }
     stages {	
         stage("install dependencies") {	
