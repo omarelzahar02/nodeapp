@@ -10,7 +10,7 @@ pipeline {
         AWS_ACCOUNT_ID="780026208030"
         AWS_DEFAULT_REGION="us-east-1"
         IMAGE_REPO_NAME="jenkins-docker"
-        IMAGE_TAG=":$BUILD_NUMBER"
+        IMAGE_TAG="latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
         THE_BUTLER_SAYS_SO=credentials('omarelzahar-aws-creds')
     }
