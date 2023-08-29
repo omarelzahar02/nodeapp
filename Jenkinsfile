@@ -1,7 +1,7 @@
 pipeline {	
 	agent {
 		docker {
-			image 'node:18-alpine'
+			image 'omarelzahar/gold:latest'
 		}
 	}
       environment {
