@@ -1,9 +1,5 @@
 pipeline {	
-	agent {
-		docker {
-			image 'omarelzahar/gold:latest'
-		}
-	}
+	agent any
       environment {
         HOME = '.'
         npm_config_cache = 'npm-cache'
