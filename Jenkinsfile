@@ -7,9 +7,10 @@ pipeline {
       environment {
         HOME = '.'
         npm_config_cache = 'npm-cache'
+        DOCKERHUB_CREDENTIALS = credentials('omarelzahar-dockerhub')
     }
     stages {	
-        stage('Build') {	
+        stage("install dependencies") {	
             steps {	
                 sh 'npm remove node_modules'
                 sh 'npm remove package-lock.json'
@@ -20,19 +21,22 @@ pipeline {
         stage(" "){
           parallel {
             stage("Test") {
-  
               steps {
                 sh 'npm run  test:unit'
               }
-  
             }
+            
           stage("Build") {
-  
               steps {
                 sh 'npm run build'
               }
             }
         }
       }	
+      stage('Login') {
+        steps {
+          sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        }
+      }
     }	
 }
