@@ -25,20 +25,20 @@ pipeline {
               }
             }
             
-          stage("Build") {
+        stage("Build") {
               steps {
                 sh 'npm run build'
               }
             }
         }
       }	
-      stage('Scan') {
-        steps {
-          withSonarQubeEnv(installationName: 'sq1') { 
-            sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-          }
-        }
-      }
+        //stage('Scan') {
+        //  steps {
+        //    withSonarQubeEnv(installationName: 'SonarServer1') { 
+        //      sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        //    }
+        //  }
+        // }
       stage('Login to Docker Hub') {         
         steps{                            
         	sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
