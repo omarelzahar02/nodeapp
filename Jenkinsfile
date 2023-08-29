@@ -32,6 +32,12 @@ pipeline {
             }
         }
       }	
+      stage('SonarQube analysis') {
+        def scannerHome = tool 'SonarScanner 4.0';
+        withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
+      }
       stage('Login to Docker Hub') {         
         steps{                            
         	sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
