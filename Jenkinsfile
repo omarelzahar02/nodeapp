@@ -8,8 +8,8 @@ pipeline {
         HOME = '.'
         npm_config_cache = 'npm-cache'
         DOCKERHUB_CREDENTIALS = credentials('omarelzahar-dockerhub')
-        registry = "gustavoapolinario/docker-test"
-    registryCredential = 'dockerhub'
+        registry = "omarelzahar/gold"
+        registryCredential = 'omarelzahar-dockerhub'
     }
     stages {	
         stage("install dependencies") {	
