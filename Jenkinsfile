@@ -32,10 +32,11 @@ pipeline {
             }
         }
       }	
-      stage('SonarQube analysis') {
-        def scannerHome = tool 'SonarScanner 4.0';
-        withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
-          sh "${scannerHome}/bin/sonar-scanner"
+      stage('Scan') {
+        steps {
+          withSonarQubeEnv(installationName: 'sq1') { 
+            sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+          }
         }
       }
       stage('Login to Docker Hub') {         
