@@ -1,15 +1,10 @@
-FROM node:14-alpine
+FROM node:18
 
-WORKDIR /usr/src/app
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl software-properties-common 
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+RUN apt-get update
+RUN apt-get install -y docker.io
+RUN apt-get install -y docker-compose
 
-ARG NODE_ENV
-ENV NODE_ENV $NODE_ENV
-
-COPY package*.json /usr/src/app/
-RUN npm install
-
-COPY . /usr/src/app
-
-ENV PORT 5000
-EXPOSE $PORT
-CMD [ "npm", "start" ]
+CMD ["node", "-v"]
