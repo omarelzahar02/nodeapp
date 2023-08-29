@@ -75,6 +75,13 @@ pipeline {
                  
             }
         }
+      stage('Building image for ECR') {
+          steps{
+            script {
+              dockerImage = docker.build "${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+            }
+          }
+        }
       stage('Pushing to ECR') {
        steps{  
            script {
