@@ -175,7 +175,7 @@ npm start
 ```
 
 
- <img src="/8.png" alt="Permissions" />
+ <img src="node-app-deployed.png" alt="Permissions" />
 
  <img src="/9.png" alt="Permissions" />
 
