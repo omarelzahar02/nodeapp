@@ -14,7 +14,7 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/dist ./dist
+COPY --from=build ./dist ./dist
 COPY package.json package-lock.json ./
 RUN npm install --production
 
