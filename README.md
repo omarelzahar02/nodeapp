@@ -193,4 +193,7 @@ npm start
 
 
  <img src="sonarqube.png" alt="Permissions" />
- 
+
+  
+<img src="sonarqube-success.png" alt="Permissions" />
+
