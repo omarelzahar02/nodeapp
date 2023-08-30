@@ -39,7 +39,8 @@ pipeline {
         }
       }	
       stage('Sonarqube Scan') {
-                    script {
+        steps{
+                  script {
                         checkout scm
                     }
                     catchError() {
@@ -51,6 +52,7 @@ pipeline {
                             -Dsonar.login=squ_d48d3a59a6a6a61e568433fcde79316321492dca
                         '''
                     }
+        }
       }
       stage('Login to Docker Hub') {         
         steps{                            
