@@ -38,13 +38,19 @@ pipeline {
             }
         }
       }	
-        //stage('Scan') {
-        //  steps {
-        //    withSonarQubeEnv(installationName: 'SonarServer1') { 
-        //      sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-        //    }
-        //  }
-        // }
+      stage('Sonarqube Scan') {
+                    script {
+                        checkout scm
+                    }
+                    catchError() {
+                        sh '''
+                        npm install -g sonarqube-scanner
+                        sonar-scanner \
+                            -Dsonar.projectKey=api.identity.ciba \
+                            -Dsonar.host.url=http://http://44.211.70.180:9000 \
+                            -Dsonar.login=squ_d48d3a59a6a6a61e568433fcde79316321492dca
+                        '''
+                    }
       stage('Login to Docker Hub') {         
         steps{                            
         	sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
