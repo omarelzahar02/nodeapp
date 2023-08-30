@@ -1,18 +1,21 @@
+# Stage 1: Build the application
+FROM node:18 AS build
 
-FROM node:18-alpine
+WORKDIR /app
 
-ENV NODE_ENV='development'
-
-WORKDIR /opt
-
-
-COPY ["package*.json", "./"]
-
-
-RUN npm install 
-
+COPY package.json package-lock.json ./
+RUN npm install
 
 COPY . .
+RUN npm run build
 
+# Stage 2: Serve the application
+FROM node:18-alpine
 
-CMD npm  start
+WORKDIR /app
+
+COPY --from=build /app/dist ./dist
+COPY package.json package-lock.json ./
+RUN npm install --production
+
+CMD ["npm", "start"]
