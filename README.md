@@ -13,7 +13,7 @@ On a technical level, inspiration has been taken from the `iojs.org` repo while 
 
 This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
 
- <img src="node-app-deployed.png" alt="Permissions" />
+ <img src="node-app-deploy.png" alt="Permissions" />
 
 ## Contributing
 
