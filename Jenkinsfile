@@ -45,7 +45,6 @@ pipeline {
                     }
                     catchError() {
                         sh '''
-                        npm install -g sonarqube-scanner
                         sonar-scanner \
                             -Dsonar.projectKey=api.identity.ciba \
                             -Dsonar.host.url=http://http://44.211.70.180:9000 \
