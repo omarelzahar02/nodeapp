@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:14-alpine AS build
+FROM node:18 AS build
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the application
-FROM node:14-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
