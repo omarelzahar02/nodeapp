@@ -1,12 +1,21 @@
-FROM node:18.8.0-alpine3.16 as builder
-WORKDIR /app
-COPY package*.json ./
-COPY src src
-RUN  npm ci && npm run build
+# Stage 1: Build the application
+FROM node:14-alpine AS build
 
-FROM node:18.8.0-alpine3.16
 WORKDIR /app
-COPY package*.json ./
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve the application
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/dist ./dist
+COPY package.json package-lock.json ./
 RUN npm install --production
-COPY --from=builder /app/dist/ dist/
-ENTRYPOINT ["npm", "run", "start:prod"]
+
+CMD ["npm", "start"]
