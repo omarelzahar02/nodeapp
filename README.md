@@ -4,7 +4,6 @@
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Crowdin](https://badges.crowdin.net/nodejs-website/localized.svg)](https://crowdin.com/project/nodejs-website)
 
- <img src="node-app-deployed.png" alt="Permissions" />
 
 ## What is this repo?
 
@@ -13,6 +12,8 @@
 On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
 
 This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
+
+ <img src="node-app-deployed.png" alt="Permissions" />
 
 ## Contributing
 
@@ -178,19 +179,18 @@ npm start
 
  <img src="AWS-ec2.png" alt="Permissions" />
 
+
  <img src="dockerhub.png" alt="Permissions" />
+
 
  <img src="ECR-images.png" alt="Permissions" />
 
+
  <img src="jenkins-builds.png" alt="Permissions" />
+
 
  <img src="jenkins-success.png" alt="Permissions" />
 
+
  <img src="sonarqube.png" alt="Permissions" />
-
- <img src="/4.png" alt="Permissions" />
- <img src="/5.png" alt="Permissions" />
-
- <img src="/6.png" alt="Permissions" />
- <img src="/7.png" alt="Permissions" />
  
