@@ -51,6 +51,7 @@ pipeline {
                             -Dsonar.login=squ_d48d3a59a6a6a61e568433fcde79316321492dca
                         '''
                     }
+      }
       stage('Login to Docker Hub') {         
         steps{                            
         	sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'                 
