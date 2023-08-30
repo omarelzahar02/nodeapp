@@ -47,7 +47,7 @@ pipeline {
                         sh '''
                         sonar-scanner \
                             -Dsonar.projectKey=api.identity.ciba \
-                            -Dsonar.host.url=http://http://44.211.70.180:9000 \
+                            -Dsonar.host.url=http://44.211.70.180:9000 \
                             -Dsonar.login=squ_d48d3a59a6a6a61e568433fcde79316321492dca
                         '''
                     }
