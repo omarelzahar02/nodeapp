@@ -36,7 +36,7 @@ COPY package*.json ./
 
 RUN npm install --only=production
 
-COPY --from=builder /usr/src/app/dist ./
+COPY --from=builder /usr/src/app/build ./build
 
 EXPOSE 3000
 
