@@ -4,6 +4,8 @@
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Crowdin](https://badges.crowdin.net/nodejs-website/localized.svg)](https://crowdin.com/project/nodejs-website)
 
+ <img src="node-app-deployed.png" alt="Permissions" />
+
 ## What is this repo?
 
 [nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
@@ -174,20 +176,17 @@ npm start
     }	
 ```
 
+ <img src="AWS-ec2.png" alt="Permissions" />
 
- <img src="node-app-deployed.png" alt="Permissions" />
+ <img src="dockerhub.png" alt="Permissions" />
 
- <img src="/9.png" alt="Permissions" />
+ <img src="ECR-images.png" alt="Permissions" />
 
- <img src="/0.png" alt="Permissions" />
+ <img src="jenkins-builds.png" alt="Permissions" />
 
- <img src="/1.png" alt="Permissions" />
+ <img src="jenkins-success.png" alt="Permissions" />
 
- <img src="/2.png" alt="Permissions" />
-
- <img src="/002.png" alt="Permissions" />
-
- <img src="/3.png" alt="Permissions" />
+ <img src="sonarqube.png" alt="Permissions" />
 
  <img src="/4.png" alt="Permissions" />
  <img src="/5.png" alt="Permissions" />
