@@ -45,7 +45,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Wait for Tests to Finish
-        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        uses: lewagon/wait-on-check-action@595dabb3acf442d47e29c9ec9ba44db0c6bdd18f
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Tests'
@@ -90,7 +90,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Wait for Tests to Finish
-        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        uses: lewagon/wait-on-check-action@595dabb3acf442d47e29c9ec9ba44db0c6bdd18f
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Tests'
@@ -132,7 +132,7 @@ jobs:
           ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Wait for Linux Build to Finish
-        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        uses: lewagon/wait-on-check-action@595dabb3acf442d47e29c9ec9ba44db0c6bdd18f
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Build on ubuntu-latest'
@@ -140,7 +140,7 @@ jobs:
           wait-interval: 30
 
       - name: Wait for Windows Build to Finish
-        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        uses: lewagon/wait-on-check-action@595dabb3acf442d47e29c9ec9ba44db0c6bdd18f
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Build on windows-latest'
